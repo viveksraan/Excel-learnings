@@ -32,6 +32,9 @@
     To remove the table just go to table design and select convert to range from the tools section
     -->
 
+### Hide and Unhide columns
+  # select the cols with all the table rows and just click on right mouse button you will be able to see hide and unhide option depending on the situation
+
 
 ### Customising the tables
   
@@ -70,3 +73,28 @@
    1. Shortcut to select all the slicers together just press the shift key and select the bottom most slicer and now you can resize or move all the slicers simultaneously 
   
   # Now you can use the slicers to sort and filter data in the table
+
+### Table Calculations and Structured references
+
+  # Using referencing in tables 
+  <!-- 
+   1. Always remember that excel when performing cell references on tables use Structured references instead of relational or absolute references. 
+   2. Structured references are very robust when you change the name of the table it automatically updates, if   you delete the table structured reference will revert back to normal references. 
+  -->
+   # example 
+   =SUM(Table2[Amount])
+
+  # ROWS
+   =ROWS(table_name)
+   =ROWS(column_name)
+   
+### Using tables to automate workbook functionality
+  <!-- 
+    1. Till now to provide an automatic drop down list to the user to fill the column 
+    2. We used the dynamic range for that but the problem for dynamic range was it's quite complex to setup for a unskilled person that might not be the best choice.
+    3. So we combine named ranges with tables this way the named range will automatically be updated and the secondary table will adjust all the updates in the named range.
+    4. Tables will automatically add all the new categories into our Range. For ex. in first hundred clients all were from Sydney and Brisbane now let's say the first one from Perth comes if you are using tables at both places the range will automatically pick the Perth from the Location attribute of the primary table add it into the Location range and will use it in the secondary table the whole computation done automatically 
+  -->
+
+  # Data cleanup
+   <!-- over the time you won't need the old data so if you want to delete it just select the rows and delete those many entries even if you delete the all rows still table and all it's properties exist as it is so adding new data will automatically be using all the table functionalities  -->
